@@ -28,8 +28,18 @@
                 <h4>{{$thread->title}}</h4>
                 <div class="body">{{$thread->body}}</div>
             </article>
-
             <hr>
+    </div>
+    <br>
+    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        @foreach($thread->replies as $reply)
+            {{$reply->owner->name}} said
+            {{$reply->created_at->diffForHumans()}}
+            <article>
+                {{$reply->body}}
+            </article>
+            <hr>
+        @endforeach
     </div>
 </div>
 </body>
