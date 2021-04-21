@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Models\Thread;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -24,5 +25,14 @@ class ThreadTest extends TestCase
         $thread = Thread::factory()->create();
 
         $this->assertInstanceOf(Collection::class,$thread->replies);
+    }
+
+    /** @test  */
+
+    public function a_thread_has_a_creator()
+    {
+        $thread = Thread::factory()->create();
+
+        $this->assertInstanceOf(User::class,$thread->creator);
     }
 }
