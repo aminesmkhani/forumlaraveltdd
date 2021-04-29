@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RepliesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThreadsController;
 
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('/threads',[ThreadsController::class,'index']);
 Route::get('/threads/{thread}',[ThreadsController::class,'show']);
+Route::post('/threads/{thread}/replies',[RepliesController::class,'store']);
 
 
 

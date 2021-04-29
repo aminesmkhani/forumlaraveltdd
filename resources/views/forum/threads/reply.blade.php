@@ -8,7 +8,7 @@
                         {{$reply->owner->name}}
                     </a>
                     said
-                    {{$reply->created_at->diffForHumans()}}
+                    {{$reply->created_at->diffForHumans()}}...
                 </div>
 
                 <div class="mt-6 text-gray-500">
